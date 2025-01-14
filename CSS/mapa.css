@@ -1,0 +1,96 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 100px; /* Espacio reservado para el header */
+    padding-bottom: 60px; /* Espacio reservado para el footer */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #004080; /* Color del header */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye contenido entre los extremos */
+    padding: 0 20px; /* Espaciado lateral */
+    z-index: 1000; /* Garantiza que esté sobre el contenido */
+}
+
+/* Título del header */
+header h1 {
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Botón del menú */
+.menu-button {
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #004080; /* Color del footer */
+    color: white;
+    text-align: center;
+    line-height: 60px; /* Centrar verticalmente */
+    z-index: 1000;
+}
+
+/* Contenedor del mapa */
+.map-container {
+    position: relative;
+    display: inline-block;
+    margin-top: auto; /* Ajusta para centrar verticalmente */
+    margin-bottom: auto;
+}
+.map-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Marcadores */
+.marker {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+.marker:hover {
+    background-color: yellow;
+}

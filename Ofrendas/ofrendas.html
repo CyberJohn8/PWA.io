@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofrendas</title>
+    <link rel="stylesheet" href="/CSS/ofrendas.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/index.html" class="menu-button">&#8592; Inicio</a>
+        <h1>Ofrendas</h1>
+    </header>
+
+    <main>
+        <p>Aquí puedes realizar donativos a las Asambleas.</p>
+    
+        <div id="search-container">
+            <input type="text" id="search-bar" placeholder="Buscar noticias..." onkeyup="filterTable()">
+        </div>
+    
+        <div id="table-container">
+
+            <table id="events-table">
+
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Fecha</th>
+                        <th>Ubicación</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Asamblea General</td>
+                        <td>2024-12-15</td>
+                        <td>Caracas</td>
+                    </tr>
+                    <tr>
+                        <td>Reunión de Oración</td>
+                        <td>2024-12-20</td>
+                        <td>Maracaibo</td>
+                    </tr>
+                    <tr>
+                        <td>Conferencia Bíblica</td>
+                        <td>2024-12-22</td>
+                        <td>Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>Evangelización en Plaza</td>
+                        <td>2024-12-25</td>
+                        <td>Barquisimeto</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </main>
+
+    <script>
+        function filterTable() {
+            const searchInput = document.getElementById("search-bar").value.toLowerCase();
+            const table = document.getElementById("events-table");
+            const rows = table.getElementsByTagName("tr");
+    
+            for (let i = 1; i < rows.length; i++) { // Ignorar la cabecera
+                const cells = rows[i].getElementsByTagName("td");
+                let match = false;
+    
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j].innerText.toLowerCase().includes(searchInput)) {
+                        match = true;
+                        break;
+                    }
+                }
+    
+                rows[i].style.display = match ? "" : "none"; // Mostrar u ocultar la fila
+            }
+        }
+    </script>
+
+    <footer>
+        <p>© 2024 Directorio de Iglesias. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

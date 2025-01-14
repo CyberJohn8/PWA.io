@@ -1,0 +1,155 @@
+/* Estilo general del header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Contenedor para los botones de la izquierda */
+.header-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Contenedor para los botones de la derecha */
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Estilo del título centrado */
+header h1 {
+    flex: 2;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Botón CRUD */
+.crud-button {
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.crud-button:hover {
+    background-color: #0056b3;
+}
+
+/* Dropdown menú */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Mostrar el menú al pasar el cursor */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+
+
+
+/*estilo para los anuncios*/
+.anuncio {
+    background: white;
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.anuncio h2 {
+    margin: 0 0 0.5em;
+    color: #4CAF50;
+}
+
+.anuncio p {
+    margin: 0.5em 0;
+}
+
+
+.anuncio a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.anuncio a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
+}
+
+
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    #detalle-content {
+        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    }
+    
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header, footer {
+        padding: 15px 0;
+    }
+}
+

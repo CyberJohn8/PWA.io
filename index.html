@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio de Iglesias</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Esto es parte de la PWA para que funcione como app -->
+    <script>
+        let deferredPrompt;
+
+        window.addEventListener("beforeinstallprompt", (e) => {
+            // Previene que el navegador muestre el diálogo de instalación automáticamente
+            e.preventDefault();
+            deferredPrompt = e;
+
+            // Mostrar el botón de instalación
+            const installButton = document.getElementById("installButton");
+            installButton.style.display = "block";
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt(); // Mostrar el prompt de instalación
+
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === "accepted") {
+                        console.log("El usuario aceptó la instalación");
+                    } else {
+                        console.log("El usuario rechazó la instalación");
+                    }
+                    deferredPrompt = null;
+                });
+            }
+        }
+    </script>
+
+    <!-- Esto es parte de la PWA para que funcione como app -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007BFF">
+</head>
+
+<body>
+    <header>
+        <div class="dropdown">
+            <button class="dropdown-button">Sesión</button>
+            <div class="dropdown-menu">
+                <a href="login.php">Iniciar Sesión</a>
+                <a href="registro.php">Registrarse</a>
+            </div>
+        </div>
+
+        <h1 style="flex-grow: 1; text-align: center;">Directorio de las Iglesias de Venezuela Congregadas al Nombre del Señor</h1>
+        
+    </header>
+
+    <main>
+        <img src="assets/NombreEstados.jpg" alt="Mapa de Venezuela" style="width: 100%; max-width: 400px;">
+        <p>Donde están dos o tres congregados en mi nombre, allí estoy yo en medio de ellos. <br> Mateo 18:20</p>
+        <div class="buttons">
+            <a href="Cartelera/cartelera.php"><button>Cartelera</button></a>
+            <a href="Ofrendas/client/ofrendas.html"><button>Ofrendas</button></a>
+            <a href="MaterialdeAsambleas/MaterialAsambleas.php"><button>Material de las Asambleas</button></a>
+            <!-- Botón con menú desplegable -->
+            <div class="dropdown">
+                <button class="dropdown-button">Localizar mediante</button>
+                <div class="dropdown-menu">
+                    <a href="ListaEstados/Mapa.html">Por mapa</a>
+                    <a href="ListaLista/ListaCompleta.php">Por lista</a>
+                    <a href="ListaCercania/ubicaciones_cercanas.php">Ubicaciones cercanas</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelectorAll(".dropdown-button").forEach(button => {
+            button.addEventListener("click", function () {
+                const menu = this.nextElementSibling;
+                menu.style.display = menu.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+
+    <footer>
+        <p>© 2024 Directorio de Iglesias. Todos los derechos reservados.</p>
+
+        <div style="display: flex; align-items: center; justify-content: space-between;">            
+            <!-- Botón para instalar la PWA -->
+            <button id="installButton" style="display: none; 
+                background-color: #006400; color: white; border: none; padding: 10px; border-radius: 5px; 
+                cursor: pointer;">
+                Instalar App
+            </button>
+        </div>
+    </footer>
+</body>
+
+</html>

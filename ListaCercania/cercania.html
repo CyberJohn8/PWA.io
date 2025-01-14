@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicaciones Cercanas</title>
+    <link rel="stylesheet" href="CSS/cartelera.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="menu-button">&#8592; Inicio</a>
+        <h1>Ubicaciones Cercanas</h1>
+    </header>
+
+    <main>
+        <button id="sync-button">Sincronizar Ubicación</button>
+        <p id="status"></p>
+
+        <div id="table-container">
+            <table id="locations-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Ciudad</th>
+                        <th>Distancia (km)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se mostrarán las ubicaciones -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("sync-button").addEventListener("click", () => {
+            const status = document.getElementById("status");
+            const tableBody = document.querySelector("#locations-table tbody");
+            tableBody.innerHTML = ""; // Limpiar la tabla
+
+            if (navigator.geolocation) {
+                status.textContent = "Obteniendo ubicación...";
+                navigator.geolocation.getCurrentPosition(position => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    // Enviar ubicación al servidor
+                    fetch("cercania.php", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: `lat=${lat}&lon=${lon}`
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            status.textContent = "Resultados encontrados:";
+                            data.forEach(loc => {
+                                const row = `
+                                    <tr>
+                                        <td>${loc.nombre}</td>
+                                        <td>${loc.estado}</td>
+                                        <td>${loc.ciudad}</td>
+                                        <td>${loc.distancia.toFixed(2)}</td>
+                                    </tr>
+                                `;
+                                tableBody.innerHTML += row;
+                            });
+                        })
+                        .catch(error => {
+                            status.textContent = "Error al obtener las ubicaciones.";
+                            console.error(error);
+                        });
+                }, () => {
+                    status.textContent = "No se pudo obtener la ubicación.";
+                });
+            } else {
+                status.textContent = "Geolocalización no soportada por este navegador.";
+            }
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Directorio de Iglesias. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

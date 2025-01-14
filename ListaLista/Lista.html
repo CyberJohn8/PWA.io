@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartelera</title>
+    <link rel="stylesheet" href="/CSS/cartelera.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/index.html" class="menu-button">&#8592; Inicio</a>
+        <h1>Lista de las Asambleas de Venezuela</h1>
+    </header>
+    
+
+
+    <main>
+        <p>Aquí puedes visualizar las Asambleas de toda Venezuela.</p>
+    
+        <div id="search-container">
+            <input type="text" id="search-bar" placeholder="Buscar noticias..." onkeyup="filterTable()">
+        </div>
+    
+        <div id="table-container">
+
+            <table id="events-table">
+
+                <thead>
+                    <tr>
+                        <th>Nombre de la Asamblea</th>
+                        <th>Estado</th>
+                        <th>Enlace</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Asamblea General</td>
+                        <td>Caracas</td>
+                        <td><a href="">Detalles</a></td>
+                    </tr>
+                    <tr>
+                        <td>Reunión de Oración</td>
+                        <td>Maracaibo</td>
+                        <td><a href="">Detalles</a></td>
+                    </tr>
+                    <tr>
+                        <td>Conferencia Bíblica</td>
+                        <td>Valencia</td>
+                        <td><a href="">Detalles</a></td>
+                    </tr>
+                    <tr>
+                        <td>Evangelización en Plaza</td>
+                        <td>Barquisimeto</td>
+                        <td><a href="">Detalles</a></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </main>
+
+    <script>
+        function filterTable() {
+            const searchInput = document.getElementById("search-bar").value.toLowerCase();
+            const table = document.getElementById("events-table");
+            const rows = table.getElementsByTagName("tr");
+    
+            for (let i = 1; i < rows.length; i++) { // Ignorar la cabecera
+                const cells = rows[i].getElementsByTagName("td");
+                let match = false;
+    
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j].innerText.toLowerCase().includes(searchInput)) {
+                        match = true;
+                        break;
+                    }
+                }
+    
+                rows[i].style.display = match ? "" : "none"; // Mostrar u ocultar la fila
+            }
+        }
+    </script>
+    
+    
+
+    <footer>
+        <p>© 2024 Directorio de Iglesias. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

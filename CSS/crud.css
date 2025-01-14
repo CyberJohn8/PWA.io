@@ -1,0 +1,221 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+
+
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+
+/* Encabezado 
+
+header {
+    background-color: #006400;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #777171;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #333;
+}
+
+
+main {
+    padding: 1em;
+
+    
+    margin-top: 20%; /* Espacio con el header */
+    margin-bottom: 20%; /* Espacio con el footer */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Espaciado general del contenido *
+main {
+    padding: 20px;
+}
+/* Espaciado para evitar que contenido choque con header y footer */
+header + main,
+main + footer {
+    margin-top: 20px; /* Separación entre las secciones */
+}
+
+
+
+
+
+
+button {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #004d00;
+}
+
+img {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+/* Contenedor del dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo del botón */
+.dropdown-button {
+    background-color: #004464;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+/* Menú desplegable oculto inicialmente */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Estilo de los enlaces en el menú */
+.dropdown-menu a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+/* Efecto hover en los enlaces */
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mostrar el menú cuando el contenedor está activo */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+
+
+
+
+
+/* Sección de tabla */
+.table-section {
+    margin-top: 20px;
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-section th,
+.table-section td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.table-section th {
+    background-color: #004080;
+    color: white;
+}
+
+.table-section tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-section tr:hover {
+    background-color: #ddd;
+}
+
+
+
+
+
+
+
+
+
+/* Opcional: Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    header, footer {
+        padding: 15px 0;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofrendas</title>
+    <link rel="stylesheet" href="/CSS/ofrendas.css">
+
+
+    
+    <!--// SDK MercadoPago.js--> 
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <a href="/index.html" class="menu-button">&#8592; Inicio</a>
+        <h1 id="descripcion-producto">Ofrenda para las Iglesias Congregadas al Nombre del Señor en Venezuela</h1>
+    </header>
+
+    <main>
+        <p>Aquí puedes realizar donativos a las Asambleas.</p>
+    
+        <div id="table-container">
+
+            <div class="button-container">
+
+                <button id="donate-3">3 $</button>
+                <button id="donate-5">5 $</button>
+                <button id="donate-10">10 $</button>
+
+            </div>
+
+            <p>O ingrese la cantidad que desea donar</p>
+            <input type="number" id="amount-imput" min="0" />
+            <p>Monto total a pagar: <span id="total-amount">0</span> $</p>
+
+
+            <button id="checkout-btn">Checkout</button>
+            
+            <div id="button-checkout"></div>
+
+            <script src="ofrendas.js"></script>
+
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p>© 2024 Directorio de Iglesias. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

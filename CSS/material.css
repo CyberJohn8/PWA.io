@@ -1,0 +1,231 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Encabezado */
+header {
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: space-between; /* Separa los elementos al máximo */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    position: relative; /* Garantiza que los hijos se alineen correctamente */
+}
+
+/* Botón de enlace */
+header .menu-button {
+    text-decoration: none;
+    font-size: 18px;
+    color: #007bff;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+header .menu-button:hover {
+    background-color: #ddd;
+}
+
+/* Título centrado */
+header h1 {
+    margin: 0 auto; /* Evita que el título se desplace */
+    font-size: 24px;
+    text-align: center;
+    flex-grow: 1; /* Permite ocupar espacio disponible */
+}
+
+/* Asegura que el botón no colisione con el título */
+header a.menu-button:first-of-type {
+    margin-right: auto; /* Empuja el botón hacia la izquierda */
+}
+
+
+
+
+/* Sección del listado */
+#listado {
+    margin: 20px auto;
+    max-width: 90%;
+    height: 300px; /* Altura fija */
+    overflow-y: auto; /* Habilitar scroll */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 10px; /* Espaciado interno */
+}
+
+#events-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    table-layout: fixed; /* Permite multilineado */
+}
+
+#events-table th, #events-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word; /* Permite que el texto sea multilinea */
+}
+
+#events-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+#events-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Separador */
+.divider {
+    margin: 30px 0;
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+}
+
+/* Sección de detalles */
+#detalle {
+    margin: 20px auto;
+    max-width: 90%;
+    height: 400px; /* Altura fija */
+    overflow-y: auto; /* Habilitar scroll */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 10px; /* Espaciado interno */
+}
+
+/* Contenido de detalles en tres grupos */
+#detalle-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas */
+    gap: 20px;
+}
+
+#detalle-content div {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    overflow-wrap: break-word; /* Ajuste del texto */
+}
+
+/* Botones */
+.detalles-btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.detalles-btn:hover {
+    background-color: #0056b3;
+}
+
+
+h3 {
+    text-align: center;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
+}
+
+
+
+
+
+/* Contenedor principal del área de búsqueda */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente si es necesario */
+    text-align: center; /* Alineación del texto */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Mejora del párrafo */
+main p {
+    font-size: 1.2em; /* Tamaño de fuente más grande */
+    margin-bottom: 20px; /* Espacio inferior */
+    color: #333; /* Color más agradable para el texto */
+}
+
+/* Contenedor de búsqueda */
+#search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio inferior */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Estilo del input de búsqueda */
+#search-bar {
+    width: 300px; /* Ancho fijo */
+    padding: 10px; /* Espaciado interno */
+    font-size: 1em; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none; /* Elimina el contorno predeterminado */
+    transition: all 0.3s ease-in-out; /* Efecto suave */
+}
+
+/* Efecto al enfocar el input */
+#search-bar:focus {
+    border-color: #007BFF; /* Cambia el color del borde */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Efecto de sombra */
+}
+
+/* Botón de búsqueda opcional (si se agrega) */
+#search-button {
+    margin-left: 10px; /* Espacio entre input y botón */
+    padding: 10px 15px;
+    background-color: #007BFF; /* Color azul */
+    color: white; /* Texto blanco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#search-button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    #detalle-content {
+        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    }
+    
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header, footer {
+        padding: 15px 0;
+    }
+}
+
